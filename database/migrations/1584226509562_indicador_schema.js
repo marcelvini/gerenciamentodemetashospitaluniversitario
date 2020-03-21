@@ -9,6 +9,7 @@ class IndicadorSchema extends Schema {
       table.increments()
       table.string('name', 80).notNullable().unique()
       table.integer('meta_id').notNullable().unsigned().references('id').inTable('metas')
+      table.integer('tipo_indicador_id').notNullable().unsigned().references('id').inTable('tipo_indicadors')
       table.integer('created_by').unsigned().references('id').inTable('usuarios')
       table.integer('updated_by').unsigned().references('id').inTable('usuarios')
       table.timestamps()

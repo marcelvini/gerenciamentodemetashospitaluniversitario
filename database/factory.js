@@ -45,3 +45,11 @@ Factory.blueprint('App/Models/TipoIndicador', (faker, i, data) => {
         ...data
     }
 })
+Factory.blueprint('App/Models/Indicador', (faker, i, data) => {
+    return {
+        name: faker.name(),
+        meta_id: 1,
+        tipo_indicador_id: 1,
+        ...data
+    }
+})
