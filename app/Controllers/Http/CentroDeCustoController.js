@@ -61,7 +61,7 @@ class CentroDeCustoController {
    */
   async update({ params, request, response }) {
     const centroDeCusto = await CentroDeCusto.findOrFail(params.id)
-    centroDeCusto.fill(request.post())
+    centroDeCusto.merge(request.post())
     await centroDeCusto.save()
     return centroDeCusto
   }

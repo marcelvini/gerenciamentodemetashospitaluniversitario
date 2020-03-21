@@ -19,5 +19,15 @@ const Route = use('Route')
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 }).middleware(["auth"])
+// AUTH
 Route.post("/signin", "AuthController.signin")
 Route.post("/signup", "AuthController.signup")
+//CENTRO DE CUSTOS
+Route.post("/costcenter", "CentroDeCustoController.store").middleware(["auth"])
+Route.get("/costcenter", "CentroDeCustoController.index").middleware(["auth"])
+Route.get("/costcenter/:id", "CentroDeCustoController.show").middleware(["auth"])
+Route.put("/costcenter/:id", "CentroDeCustoController.update").middleware(["auth"])
+Route.delete("/costcenter/:id", "CentroDeCustoController.destroy").middleware(["auth"])
+//METAS
+//INDICADORES
+//RELATORIOS
