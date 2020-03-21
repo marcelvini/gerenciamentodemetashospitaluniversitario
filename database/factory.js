@@ -29,3 +29,11 @@ Factory.blueprint('App/Models/CentroDeCusto', (faker, i, data) => {
         ...data
     }
 })
+Factory.blueprint('App/Models/Meta', (faker, i, data) => {
+    return {
+        name: faker.name(),
+        year: faker.integer(),
+        centro_de_custos_id: 1,
+        ...data
+    }
+})
