@@ -29,5 +29,10 @@ Route.get("/costcenter/:id", "CentroDeCustoController.show").middleware(["auth"]
 Route.put("/costcenter/:id", "CentroDeCustoController.update").middleware(["auth"])
 Route.delete("/costcenter/:id", "CentroDeCustoController.destroy").middleware(["auth"])
 //METAS
+Route.post("/goal", "MetaController.store").middleware(["auth"])
+Route.get("/goal", "MetaController.index").middleware(["auth"])
+Route.get("/goal/:id", "MetaController.show").middleware(["auth"])
+Route.put("/goal/:id", "MetaController.update").middleware(["auth"])
+Route.delete("/goal/:id", "MetaController.destroy").middleware(["auth"])
 //INDICADORES
 //RELATORIOS

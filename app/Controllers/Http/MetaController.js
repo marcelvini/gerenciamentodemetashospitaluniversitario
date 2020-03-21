@@ -62,7 +62,7 @@ class MetaController {
    */
   async update({ params, request, response }) {
     const meta = await Meta.findOrFail(params.id)
-    meta.fill(request.post())
+    meta.merge(request.post())
     await meta.save()
     return meta
   }
