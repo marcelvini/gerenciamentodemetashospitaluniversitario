@@ -45,4 +45,10 @@ Route.get("/indicator", "IndicadorController.index").middleware(["auth"])
 Route.get("/indicator/:id", "IndicadorController.show").middleware(["auth"])
 Route.put("/indicator/:id", "IndicadorController.update").middleware(["auth"])
 Route.delete("/indicator/:id", "IndicadorController.destroy").middleware(["auth"])
+//HISTORICO DE INDICADORES
+Route.post("/historyindicator", "HistoricoIndicadorController.store").middleware(["auth"])
+Route.get("/historyindicator", "HistoricoIndicadorController.index").middleware(["auth"])
+Route.get("/historyindicator/:id", "HistoricoIndicadorController.show").middleware(["auth"])
+Route.put("/historyindicator/:id", "HistoricoIndicadorController.update").middleware(["auth"])
+Route.delete("/historyindicator/:id", "HistoricoIndicadorController.destroy").middleware(["auth"])
 //RELATORIOS

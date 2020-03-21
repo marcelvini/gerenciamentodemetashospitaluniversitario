@@ -5,9 +5,9 @@ const Schema = use('Schema')
 
 class HistoricoIndicadorSchema extends Schema {
   up() {
-    this.create('historico_indicadores', (table) => {
+    this.create('historico_indicadors', (table) => {
       table.increments()
-      table.float('value').notNullable().unique()
+      table.float('value').notNullable()
       table.integer('indicador_id').notNullable().unsigned().references('id').inTable('indicadores')
       table.integer('created_by').unsigned().references('id').inTable('usuarios')
       table.integer('updated_by').unsigned().references('id').inTable('usuarios')
@@ -16,7 +16,7 @@ class HistoricoIndicadorSchema extends Schema {
   }
 
   down() {
-    this.drop('historico_indicadores')
+    this.drop('historico_indicadors')
   }
 }
 
