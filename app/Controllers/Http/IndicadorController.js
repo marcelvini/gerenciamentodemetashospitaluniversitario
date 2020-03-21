@@ -7,6 +7,7 @@
 /**
  * Resourceful controller for interacting with indicadors
  */
+const Indicador = use('App/Models/Indicador')
 class IndicadorController {
   /**
    * Show a list of all indicadors.
@@ -17,20 +18,12 @@ class IndicadorController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async index ({ request, response, view }) {
+  async index({ request, response, view }) {
+    const indicador = await Indicador.all()
+    return indicador
   }
 
-  /**
-   * Render a form to be used for creating a new indicador.
-   * GET indicadors/create
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async create ({ request, response, view }) {
-  }
+
 
   /**
    * Create/save a new indicador.
@@ -40,7 +33,10 @@ class IndicadorController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async store ({ request, response }) {
+  async store({ request, response }) {
+    const data = request.post()
+    const indicador = await Indicador.create(data)
+    return indicador
   }
 
   /**
@@ -52,20 +48,12 @@ class IndicadorController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async show ({ params, request, response, view }) {
+  async show({ params, request, response, view }) {
+    const indicador = await Indicador.findOrFail(params.id)
+    return indicador
   }
 
-  /**
-   * Render a form to update an existing indicador.
-   * GET indicadors/:id/edit
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async edit ({ params, request, response, view }) {
-  }
+
 
   /**
    * Update indicador details.
@@ -75,7 +63,11 @@ class IndicadorController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async update ({ params, request, response }) {
+  async update({ params, request, response }) {
+    const indicador = await Indicador.findOrFail(params.id)
+    indicador.merge(request.post())
+    await indicador.save()
+    return indicador
   }
 
   /**
@@ -86,7 +78,9 @@ class IndicadorController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async destroy ({ params, request, response }) {
+  async destroy({ params, request, response }) {
+    const indicador = await Indicador.findOrFail(params.id)
+    indicador.delete()
   }
 }
 
