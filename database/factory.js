@@ -53,3 +53,10 @@ Factory.blueprint('App/Models/Indicador', (faker, i, data) => {
         ...data
     }
 })
+Factory.blueprint('App/Models/HistoricoIndicador', (faker, i, data) => {
+    return {
+        value: faker.floating(),
+        indicador_id: 1,
+        ...data
+    }
+})
