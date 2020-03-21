@@ -40,4 +40,9 @@ Route.get("/indicatortype", "TipoIndicadorController.index").middleware(["auth"]
 Route.get("/indicatortype/:id", "TipoIndicadorController.show").middleware(["auth"])
 Route.delete("/indicatortype/:id", "TipoIndicadorController.destroy").middleware(["auth"])
 //INDICADORES
+Route.post("/indicator", "IndicadorController.store").middleware(["auth"])
+Route.get("/indicator", "IndicadorController.index").middleware(["auth"])
+Route.get("/indicator/:id", "IndicadorController.show").middleware(["auth"])
+Route.put("/indicator/:id", "IndicadorController.update").middleware(["auth"])
+Route.delete("/indicator/:id", "IndicadorController.destroy").middleware(["auth"])
 //RELATORIOS

@@ -5,7 +5,7 @@ const Schema = use('Schema')
 
 class IndicadorSchema extends Schema {
   up() {
-    this.create('indicadores', (table) => {
+    this.create('indicadors', (table) => {
       table.increments()
       table.string('name', 80).notNullable().unique()
       table.integer('meta_id').notNullable().unsigned().references('id').inTable('metas')
@@ -16,7 +16,7 @@ class IndicadorSchema extends Schema {
   }
 
   down() {
-    this.drop('indicadores')
+    this.drop('indicadors')
   }
 }
 
