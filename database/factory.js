@@ -23,3 +23,9 @@ Factory.blueprint('App/Models/Usuario', (faker, i, data) => {
         ...data
     }
 })
+Factory.blueprint('App/Models/CentroDeCusto', (faker, i, data) => {
+    return {
+        name: faker.name(),
+        ...data
+    }
+})
