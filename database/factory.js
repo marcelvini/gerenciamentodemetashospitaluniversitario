@@ -37,3 +37,10 @@ Factory.blueprint('App/Models/Meta', (faker, i, data) => {
         ...data
     }
 })
+Factory.blueprint('App/Models/TipoIndicador', (faker, i, data) => {
+    return {
+        frequency: faker.string(),
+        value_type: faker.string(),
+        ...data
+    }
+})
