@@ -23,6 +23,7 @@ test('it should create a new indicator type on database', async ({ assert, clien
 
     })
     const response = await client.post("/indicatortype").send({
+        name: "MensalPorcentagemTI",
         frequency: "mensal",
         value_type: "porcentagem",
     }).loginVia(usuario, "jwt").end()
