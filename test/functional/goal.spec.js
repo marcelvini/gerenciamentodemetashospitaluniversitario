@@ -1,8 +1,6 @@
 'use strict'
 
 const { test, trait, afterEach } = use('Test/Suite')('Goal')
-const Usuario = use('App/Models/Usuario')
-const CentroDeCusto = use('App/Models/CentroDeCusto')
 const Meta = use('App/Models/Meta')
 const Factory = use('Factory')
 const ace = require('@adonisjs/ace')
