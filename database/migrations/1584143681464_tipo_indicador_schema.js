@@ -7,8 +7,8 @@ class TipoIndicadorSchema extends Schema {
   up() {
     this.create('tipo_indicadors', (table) => {
       table.increments()
-      table.string('frequency', 80).notNullable().unique()
-      table.string('value_type', 80).notNullable().unique()
+      table.string('frequency', 80).notNullable()
+      table.string('value_type', 80).notNullable()
       table.integer('created_by').unsigned().references('id').inTable('usuarios')
       table.integer('updated_by').unsigned().references('id').inTable('usuarios')
       table.timestamps()

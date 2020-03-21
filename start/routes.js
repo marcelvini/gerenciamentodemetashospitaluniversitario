@@ -34,5 +34,10 @@ Route.get("/goal", "MetaController.index").middleware(["auth"])
 Route.get("/goal/:id", "MetaController.show").middleware(["auth"])
 Route.put("/goal/:id", "MetaController.update").middleware(["auth"])
 Route.delete("/goal/:id", "MetaController.destroy").middleware(["auth"])
+//TIPOS DE INDICADORES
+Route.post("/indicatortype", "TipoIndicadorController.store").middleware(["auth"])
+Route.get("/indicatortype", "TipoIndicadorController.index").middleware(["auth"])
+Route.get("/indicatortype/:id", "TipoIndicadorController.show").middleware(["auth"])
+Route.delete("/indicatortype/:id", "TipoIndicadorController.destroy").middleware(["auth"])
 //INDICADORES
 //RELATORIOS
