@@ -26,7 +26,7 @@ test('it should create a new goal on database', async ({ assert, client }) => {
     const response = await client.post("/goal").send({
         name: "Meta A",
         year: 2020,
-        centro_de_custos_id: costcenter.id,
+        centro_de_custo_id: costcenter.id,
     }).loginVia(usuario, "jwt").end()
     const goal = await Meta.findBy('name', 'Meta A')
     response.assertStatus(200)
@@ -46,7 +46,7 @@ test('it should update the goal on database', async ({ assert, client }) => {
     await Factory.model('App/Models/Meta').create({
         name: "Meta A",
         year: 2020,
-        centro_de_custos_id: costcenter.id,
+        centro_de_custo_id: costcenter.id,
     })
     const response = await client.put("/goal/1").send({
         name: "Meta B",
@@ -91,7 +91,7 @@ test('it should show the goal with id equal to id param on url', async ({ assert
     await Factory.model('App/Models/Meta').create({
         name: "Meta A",
         year: 2020,
-        centro_de_custos_id: costcenter.id,
+        centro_de_custo_id: costcenter.id,
     })
     const response = await client.get("/costcenter/1").send().loginVia(usuario, "jwt").end()
     const goal = await Meta.findBy('id', 1)
@@ -113,7 +113,7 @@ test('it should delete the goal with id equal to id param on url', async ({ asse
     await Factory.model('App/Models/Meta').create({
         name: "Meta A",
         year: 2020,
-        centro_de_custos_id: costcenter.id,
+        centro_de_custo_id: costcenter.id,
     })
     const response = await client.delete("/goal/1").send().loginVia(usuario, "jwt").end()
     const goal = await Meta.findBy('id', 1)

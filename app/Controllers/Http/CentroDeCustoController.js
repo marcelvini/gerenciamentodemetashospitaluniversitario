@@ -48,6 +48,7 @@ class CentroDeCustoController {
    */
   async show({ params, request, response, view }) {
     const centroDeCusto = await CentroDeCusto.findOrFail(params.id)
+    await centroDeCusto.load('metas')
     return centroDeCusto
   }
 

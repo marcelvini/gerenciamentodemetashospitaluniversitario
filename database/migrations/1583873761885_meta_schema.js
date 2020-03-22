@@ -9,7 +9,7 @@ class MetaSchema extends Schema {
       table.increments()
       table.string('name', 80).notNullable().unique()
       table.integer('year').notNullable()
-      table.integer('centro_de_custos_id').notNullable().unsigned().references('id').inTable('centro_de_custos')
+      table.integer('centro_de_custo_id').notNullable().unsigned().references('id').inTable('centro_de_custos')
       table.integer('created_by').unsigned().references('id').inTable('usuarios')
       table.integer('updated_by').unsigned().references('id').inTable('usuarios')
       table.timestamps()

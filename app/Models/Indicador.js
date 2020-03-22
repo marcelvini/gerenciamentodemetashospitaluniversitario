@@ -8,10 +8,10 @@ class Indicador extends Model {
         return this.belongsTo('App/Models/Meta')
     }
     tipoindicador() {
-        return this.hasOne('App/Models/TipoIndicador')
+        return this.belongsTo('App/Models/TipoIndicador')
     }
-    historicoindicador() {
-        return this.hasmany('App/Models/TipoIndicador')
+    historicoindicadores() {
+        return this.hasMany('App/Models/HistoricoIndicador')
     }
 }
 

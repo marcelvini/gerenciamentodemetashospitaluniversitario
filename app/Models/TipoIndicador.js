@@ -4,8 +4,8 @@
 const Model = use('Model')
 
 class TipoIndicador extends Model {
-    indicador() {
-        return this.belongsToMany('App/Models/Indicador')
+    indicadores() {
+        return this.hasMany('App/Models/Indicador')
     }
 }
 

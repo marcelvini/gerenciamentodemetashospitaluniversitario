@@ -49,6 +49,7 @@ class MetaController {
    */
   async show({ params, request, response, view }) {
     const meta = await Meta.findOrFail(params.id)
+    await meta.load('indicadores')
     return meta
   }
 

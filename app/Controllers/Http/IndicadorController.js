@@ -50,6 +50,8 @@ class IndicadorController {
    */
   async show({ params, request, response, view }) {
     const indicador = await Indicador.findOrFail(params.id)
+    await indicador.load('historicoindicadores')
+    await indicador.load('tipoindicador')
     return indicador
   }
 

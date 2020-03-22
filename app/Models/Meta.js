@@ -5,10 +5,10 @@ const Model = use('Model')
 
 class Meta extends Model {
     centrodecusto() {
-        return this.hasOne('App/Models/CentroDeCusto')
+        return this.belongsTo('App/Models/CentroDeCusto')
     }
     indicadores() {
-        return this.hasMany('App/Models/Indicadores')
+        return this.hasMany('App/Models/Indicador')
     }
 }
 

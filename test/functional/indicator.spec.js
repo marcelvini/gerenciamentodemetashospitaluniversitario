@@ -24,7 +24,7 @@ test('it should create a new indicator on database', async ({ assert, client }) 
     })
     const costcenter = await Factory.model('App/Models/CentroDeCusto').create()
     const goal = await Factory.model('App/Models/Meta').create({
-        centro_de_custos_id: costcenter.id,
+        centro_de_custo_id: costcenter.id,
     })
     const indicatortype = await Factory.model('App/Models/TipoIndicador').create()
     const response = await client.post("/indicator").send({
@@ -48,7 +48,7 @@ test('it should update the indicator on database', async ({ assert, client }) =>
     })
     const costcenter = await Factory.model('App/Models/CentroDeCusto').create()
     const goal = await Factory.model('App/Models/Meta').create({
-        centro_de_custos_id: costcenter.id,
+        centro_de_custo_id: costcenter.id,
     })
     const indicatortype = await Factory.model('App/Models/TipoIndicador').create()
     await Factory.model('App/Models/Indicador').create({
@@ -97,7 +97,7 @@ test('it should show the indicator with id equal to id param on url', async ({ a
     })
     const costcenter = await Factory.model('App/Models/CentroDeCusto').create()
     const goal = await Factory.model('App/Models/Meta').create({
-        centro_de_custos_id: costcenter.id,
+        centro_de_custo_id: costcenter.id,
     })
     const indicatortype = await Factory.model('App/Models/TipoIndicador').create()
     await Factory.model('App/Models/Indicador').create({
@@ -123,7 +123,7 @@ test('it should delete the indicator with id equal to id param on url', async ({
     })
     const costcenter = await Factory.model('App/Models/CentroDeCusto').create()
     const goal = await Factory.model('App/Models/Meta').create({
-        centro_de_custos_id: costcenter.id,
+        centro_de_custo_id: costcenter.id,
     })
     const indicatortype = await Factory.model('App/Models/TipoIndicador').create()
     await Factory.model('App/Models/Indicador').create({

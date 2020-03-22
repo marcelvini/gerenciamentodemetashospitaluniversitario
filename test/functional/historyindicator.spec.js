@@ -24,7 +24,7 @@ test('it should create a new history indicator on database', async ({ assert, cl
     })
     const costcenter = await Factory.model('App/Models/CentroDeCusto').create()
     const goal = await Factory.model('App/Models/Meta').create({
-        centro_de_custos_id: costcenter.id,
+        centro_de_custo_id: costcenter.id,
     })
     const indicatortype = await Factory.model('App/Models/TipoIndicador').create()
     const indicator = await Factory.model('App/Models/Indicador').create({
@@ -51,7 +51,7 @@ test('it should update the history indicator on database', async ({ assert, clie
     })
     const costcenter = await Factory.model('App/Models/CentroDeCusto').create()
     const goal = await Factory.model('App/Models/Meta').create({
-        centro_de_custos_id: costcenter.id,
+        centro_de_custo_id: costcenter.id,
     })
     const indicatortype = await Factory.model('App/Models/TipoIndicador').create()
     const indicator = await Factory.model('App/Models/Indicador').create({
@@ -103,7 +103,7 @@ test('it should show the history indicator with id equal to id param on url', as
     })
     const costcenter = await Factory.model('App/Models/CentroDeCusto').create()
     const goal = await Factory.model('App/Models/Meta').create({
-        centro_de_custos_id: costcenter.id,
+        centro_de_custo_id: costcenter.id,
     })
     const indicatortype = await Factory.model('App/Models/TipoIndicador').create()
     const indicator = await Factory.model('App/Models/Indicador').create({
@@ -132,7 +132,7 @@ test('it should delete the history indicator with id equal to id param on url', 
     })
     const costcenter = await Factory.model('App/Models/CentroDeCusto').create()
     const goal = await Factory.model('App/Models/Meta').create({
-        centro_de_custos_id: costcenter.id,
+        centro_de_custo_id: costcenter.id,
     })
     const indicatortype = await Factory.model('App/Models/TipoIndicador').create()
     const indicator = await Factory.model('App/Models/Indicador').create({
