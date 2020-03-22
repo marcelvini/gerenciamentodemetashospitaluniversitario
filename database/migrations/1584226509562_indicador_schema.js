@@ -8,6 +8,7 @@ class IndicadorSchema extends Schema {
     this.create('indicadors', (table) => {
       table.increments()
       table.string('name', 80).notNullable().unique()
+      table.float('expected_value').notNullable()
       table.integer('meta_id').notNullable().unsigned().references('id').inTable('metas')
       table.integer('tipo_indicador_id').notNullable().unsigned().references('id').inTable('tipo_indicadors')
       table.integer('created_by').unsigned().references('id').inTable('usuarios')

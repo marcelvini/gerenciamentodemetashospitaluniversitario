@@ -29,6 +29,7 @@ test('it should create a new indicator on database', async ({ assert, client }) 
     const indicatortype = await Factory.model('App/Models/TipoIndicador').create()
     const response = await client.post("/indicator").send({
         name: "Indicador A",
+        expected_value: 100,
         meta_id: goal.id,
         tipo_indicador_id: indicatortype.id
     }).loginVia(usuario, "jwt").end()
@@ -53,6 +54,7 @@ test('it should update the indicator on database', async ({ assert, client }) =>
     const indicatortype = await Factory.model('App/Models/TipoIndicador').create()
     await Factory.model('App/Models/Indicador').create({
         name: "indicador A",
+        expected_value: 100,
         meta_id: goal.id,
         tipo_indicador_id: indicatortype.id,
     })
@@ -102,6 +104,7 @@ test('it should show the indicator with id equal to id param on url', async ({ a
     const indicatortype = await Factory.model('App/Models/TipoIndicador').create()
     await Factory.model('App/Models/Indicador').create({
         name: "indicador A",
+        expected_value: 100,
         meta_id: goal.id,
         tipo_indicador_id: indicatortype.id,
     })
@@ -128,6 +131,7 @@ test('it should delete the indicator with id equal to id param on url', async ({
     const indicatortype = await Factory.model('App/Models/TipoIndicador').create()
     await Factory.model('App/Models/Indicador').create({
         name: "indicador A",
+        expected_value: 100,
         meta_id: goal.id,
         tipo_indicador_id: indicatortype.id,
     })

@@ -52,3 +52,4 @@ Route.get("/historyindicator/:id", "HistoricoIndicadorController.show").middlewa
 Route.put("/historyindicator/:id", "HistoricoIndicadorController.update").middleware(["auth"])
 Route.delete("/historyindicator/:id", "HistoricoIndicadorController.destroy").middleware(["auth"])
 //RELATORIOS
+Route.get("/fullreport", "RelatorioController.goalsstatus").middleware(["auth"])

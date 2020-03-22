@@ -48,6 +48,7 @@ Factory.blueprint('App/Models/TipoIndicador', (faker, i, data) => {
 Factory.blueprint('App/Models/Indicador', (faker, i, data) => {
     return {
         name: faker.name(),
+        expected_value: faker.floating(),
         meta_id: 1,
         tipo_indicador_id: 1,
         ...data
