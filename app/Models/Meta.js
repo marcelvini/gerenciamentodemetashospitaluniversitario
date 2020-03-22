@@ -7,6 +7,9 @@ class Meta extends Model {
     centrodecusto() {
         return this.hasOne('App/Models/CentroDeCusto')
     }
+    indicadores() {
+        return this.hasMany('App/Models/Indicadores')
+    }
 }
 
 module.exports = Meta
