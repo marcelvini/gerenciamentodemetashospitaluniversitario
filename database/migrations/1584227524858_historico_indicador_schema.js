@@ -8,7 +8,7 @@ class HistoricoIndicadorSchema extends Schema {
     this.create('historico_indicadors', (table) => {
       table.increments()
       table.float('value').notNullable()
-      table.integer('indicador_id').notNullable().unsigned().references('id').inTable('indicadores')
+      table.integer('indicador_id').notNullable().unsigned().references('id').inTable('indicadors')
       table.integer('created_by').unsigned().references('id').inTable('usuarios')
       table.integer('updated_by').unsigned().references('id').inTable('usuarios')
       table.timestamps()
