@@ -4,15 +4,13 @@ const { test, trait, afterEach } = use('Test/Suite')('CostCenter')
 const CentroDeCusto = use('App/Models/CentroDeCusto')
 const Factory = use('Factory')
 const ace = require('@adonisjs/ace')
-
 trait('Test/ApiClient')
 trait('Auth/Client')
-
 afterEach(async () => {
     await ace.call('migration:rollback', {}, { silent: true })
     await ace.call('migration:run', {}, { silent: true })
 })
-test('it should create a new cost center on database', async ({ assert, client }) => {
+test('it should create a new cost center on database', async ({ assert, client, imperium }) => {
     const credentials = {
         email: "marcel@gmail.com",
         password: "123"

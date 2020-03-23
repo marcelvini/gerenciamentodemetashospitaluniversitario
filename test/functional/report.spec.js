@@ -11,6 +11,7 @@ trait('Auth/Client')
 afterEach(async () => {
     await ace.call('migration:rollback', {}, { silent: true })
     await ace.call('migration:run', {}, { silent: true })
+
 })
 test('it should return the expected nums when no filters applied to fixed values and objects on database', async ({ assert, client }) => {
     const credentials = {
